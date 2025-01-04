@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+   name: jiraserver
+spec:
+   containers:
+     - name: jiraserver
+       image: alpine
+       ports:
+         - containerPort: 80
+       env:
+        - name: project
+          valueFrom:
+             configMapKeyRef:
+                name: ssm-configmap
+                key: project
+        - name: team
+          valueFrom:
+             configMapKeyRef:
+                name: ssm-configmap
+                key: team
+
