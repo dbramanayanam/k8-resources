@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: annotations
+   namespace: roboshop
+   labels:
+     environment: production
+     #owner: dinesh-babu
+     #url-label: https://jenkins.com:8080
+   annotations:
+     url: https://jenkins.com:8080
+spec:
+   containers:
+      - name: annotations
+        image: nginx
+        ports:
+           - containerPort: 80
