@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: web
+    labels:
+        environment: dev
+        project: ssm
+spec:
+  containers: 
+      - name: web
+        image: nginx
+        ports:
+          #hostPort: 8080
+          - containerPort: 80
