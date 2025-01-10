@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: web
-  namespace: roboshop
+  #namespace: roboshop
 data:
   nginx.conf: |
     user www-data;
@@ -154,7 +154,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: web
-  namespace: roboshop
+  #namespace: roboshop
 spec:
   type: LoadBalancer
   selector:
